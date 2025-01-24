@@ -1,0 +1,22 @@
+name: "Build"
+on:
+  pull_request:
+  pull_request_target:
+  merge_group:
+  push:
+    branches:
+      - master
+env:
+  secret_token: ${{ secrets.SECRET_TOKEN }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the secret token exists
+        if: ${{ env.secret_token != '' }}
+        run: echo "Secret token exists"
+      - name: Print the secret token does not exist
+        if: ${{ env.secret_token == '' }}
+        run: echo "Secret token does not exist"
+
+# area for changes
