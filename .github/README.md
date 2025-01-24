@@ -20,7 +20,7 @@ trust_code = ${{ github.event.pull_request.author_association == 'MEMBER' || con
 To restrict, we build the following logic:
 ```yaml
 ((not in_pull_request_target) OR trust_code) AND ((not in_pull_request) OR (not trust_code))
-```
+```asdasd
 
 Let's verify this condition with inputs `in_pull_request_target`, `in_pull_request`, and `trust_code` (where both `in_pull_request_target` and `in_pull_request` cannot be true at the same time):
 
